@@ -10,7 +10,7 @@ services:
       - MARIADB_CHARACTER_SET=utf8mb4
       - MARIADB_COLLATE=utf8mb4_unicode_ci
     volumes:
-      - /path/to/mariadb-persistence:/bitnami/mariadb
+      - '/path/to/mariadb-persistence:/bitnami/mariadb'
   moodle:
     image: docker.io/bitnami/moodle:4
     ports:
@@ -24,7 +24,7 @@ services:
       # ALLOW_EMPTY_PASSWORD is recommended only for development.
       - ALLOW_EMPTY_PASSWORD=yes
     volumes:
-      - /path/to/moodle-persistence:/bitnami/moodle
+      - '/path/to/moodle-persistence:/bitnami/moodle'
       - 'moodledata_data:/bitnami/moodledata'
     depends_on:
       - mariadb
